@@ -3,13 +3,13 @@ MODEL: multiview_ppt
 DATA_DIR: ''
 OUTPUT_DIR: 'output'
 LOG_DIR: 'log'
-WORKERS: 16
+WORKERS: 4
 PRINT_FREQ: 100
 
 DATASET:
   TRAIN_DATASET: multiview_h36m
   TEST_DATASET: multiview_h36m
-  ROOT: 'data/h36m/'
+  ROOT: '/mntnfs/med_data5/wangjiong/datasets'
   TRAIN_SUBSET: train
   TEST_SUBSET: validation
   DATA_FORMAT: 'jpg'
@@ -21,7 +21,7 @@ NETWORK:
   INIT_WEIGHTS: true
   NAME: pose_tokenpose_s
   NUM_JOINTS: 17
-  PRETRAINED: 'models/model_best.pth'
+  PRETRAINED: './models/ppt_s_ratio_07_coco_256_256.pth'
   TARGET_TYPE: gaussian
   TRANSFORMER_DEPTH: 12
   TRANSFORMER_HEADS: 8
